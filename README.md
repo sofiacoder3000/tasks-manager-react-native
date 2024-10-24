@@ -57,7 +57,7 @@ If you can't get this to work, see the [Troubleshooting](https://reactnative.dev
 # 📸 Some Screenshots
 
 <p align="center">
-  <img src="./assets/task_manager_app_preview.png" alt="Task Manager App See all tasks" width="300" style="margin-right: 20px;" />
-  <img src="./assets/task_manager_app_preview2.png" alt="Task Manager App See only completed tasks" width="300" style="margin-right: 20px;"/>
-    <img src="./assets/task_manager_app_preview3.png" alt="Task Manager App See search tasks" width="300" style="margin-right: 20px;"/>
+  <img src="./assets/01-task-manager-see-all.png" alt="Task Manager App See all tasks" width="300" style="margin-right: 20px;" />
+  <img src="./assets/02-task-manager-completed.png" alt="Task Manager App See only completed tasks" width="300" style="margin-right: 20px;"/>
+    <img src="./assets/03-task-manager-search.png" alt="Task Manager App See search tasks" width="300" style="margin-right: 20px;"/>
 </p>
