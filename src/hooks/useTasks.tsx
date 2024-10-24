@@ -26,12 +26,12 @@ export function useTasks() {
     return tasksDB.getTasks(db);
   }
 
-  async function addTask(newGender: TaskDTO): Promise<void> {
-    tasksDB.saveTask(db, newGender).then(refreshList);
+  async function addTask(newTask: TaskDTO): Promise<void> {
+    tasksDB.saveTask(db, newTask).then(refreshList);
   }
 
-  async function editTask(gender: Task): Promise<void> {
-    tasksDB.editTask(db, gender).then(refreshList);
+  async function editTask(task: Task): Promise<void> {
+    tasksDB.editTask(db, task).then(refreshList);
   }
 
   function toggleTask(id: number) {
@@ -42,9 +42,9 @@ export function useTasks() {
     );
   }
 
-  async function deleteTask(idGender: number): Promise<void> {
-    if (idGender !== undefined) {
-      return tasksDB.deleteTask(db, idGender).then(refreshList);
+  async function deleteTask(idTask: number): Promise<void> {
+    if (idTask !== undefined) {
+      return tasksDB.deleteTask(db, idTask).then(refreshList);
     }
     return Promise.reject(Error('Could not delete an undefined list'));
   }

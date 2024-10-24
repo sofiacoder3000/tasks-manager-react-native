@@ -10,7 +10,7 @@ import {useTasks} from '@hooks/useTasks';
 const TaskScreen: React.FC = () => {
   const [searchText, setSearchText] = useState('');
   const [filter, setFilter] = useState<'all' | 'completed'>('all');
-  const {tasks, initializeTasks, addTask, editTask} = useTasks();
+  const {tasks, initializeTasks, addTask, editTask, deleteTask} = useTasks();
 
   const loadDataCallback = useCallback(async () => {
     try {
@@ -41,6 +41,10 @@ const TaskScreen: React.FC = () => {
     editTask({..._task, completed: !_task.completed});
   };
 
+  const handleDeleteTask = (_task: Task) => {
+    deleteTask(_task.id);
+  };
+
   const filteredTasks = tasks.filter(task => {
     const matchesSearch = task.text
       .toLowerCase()
@@ -67,7 +71,11 @@ const TaskScreen: React.FC = () => {
           total={tasks.length}
         />
         <TaskInput onAddTask={handleAddTask} />
-        <TaskList tasks={filteredTasks} onToggle={handleToggleTask} />
+        <TaskList
+          tasks={filteredTasks}
+          onToggle={handleToggleTask}
+          onDelete={handleDeleteTask}
+        />
       </View>
     </SafeAreaView>
   );

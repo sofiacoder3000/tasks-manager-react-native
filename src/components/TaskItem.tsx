@@ -6,9 +6,10 @@ import {CheckBox} from '@rneui/base';
 interface TaskItemProps {
   task: Task;
   onToggle: (task: Task) => void;
+  onDelete: (task: Task) => void;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({task, onToggle}) => {
+const TaskItem: React.FC<TaskItemProps> = ({task, onToggle, onDelete}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => onToggle(task)} style={styles.row}>
@@ -23,6 +24,11 @@ const TaskItem: React.FC<TaskItemProps> = ({task, onToggle}) => {
             {task.text}
           </Text>
         </View>
+        <TouchableOpacity
+          onPress={() => onDelete(task)}
+          style={styles.deleteTask}>
+          <Text style={styles.text}>X</Text>
+        </TouchableOpacity>
       </TouchableOpacity>
     </View>
   );
@@ -34,10 +40,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#6A5AE0',
     marginBottom: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   checkbox: {
     backgroundColor: 'transparent',
@@ -58,6 +67,14 @@ const styles = StyleSheet.create({
   completed: {
     textDecorationLine: 'line-through',
     color: '#fff',
+  },
+  deleteTask: {
+    minHeight: 48,
+    minWidth: 48,
+    color: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 50,
   },
 });
 
