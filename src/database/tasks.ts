@@ -3,9 +3,10 @@ import {TaskDTO} from '../models/task';
 
 const tableName = 'tasks';
 export const tasksDefault: TaskDTO[] = [
+  {text: 'Wake Up', completed: true},
   {text: 'Clean the house', completed: false},
-  {text: 'Cooking', completed: false},
-  {text: 'Wash the clothes', completed: true},
+  {text: 'Cooking food', completed: false},
+  {text: 'Wash the clothes', completed: false},
 ];
 
 enablePromise(true);
@@ -37,9 +38,9 @@ export const createTasksDefault = async (
         query +
         "('" +
         tasksDefault[i].text +
-        "','" +
+        "'," +
         tasksDefault[i].completed +
-        "')";
+        ')';
       if (i !== tasksDefault.length - 1) {
         query = query + ',';
       }
