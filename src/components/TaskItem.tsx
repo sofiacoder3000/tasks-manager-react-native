@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {Task} from '@models/task';
-import {CheckBox} from '@rneui/base';
+// import {CheckBox} from '@rneui/base';
 
 interface TaskItemProps {
   task: Task;
@@ -13,12 +13,12 @@ const TaskItem: React.FC<TaskItemProps> = ({task, onToggle, onDelete}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => onToggle(task)} style={styles.row}>
-        <CheckBox
+        {/* <CheckBox
           checked={task.completed}
           onPress={() => onToggle(task)}
           containerStyle={styles.checkbox}
           checkedColor="#fff000"
-        />
+        /> */}
         <View style={styles.textContainer}>
           <Text style={[styles.text, task.completed && styles.completed]}>
             {task.text}

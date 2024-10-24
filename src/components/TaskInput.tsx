@@ -19,7 +19,7 @@ const TaskInput: React.FC<TaskInputProps> = ({onAddTask}) => {
     if (taskText.trim()) {
       onAddTask(taskText);
       setTaskText('');
-      Keyboard.dismiss(); // Oculta el teclado
+      Keyboard.dismiss();
     }
   };
 
